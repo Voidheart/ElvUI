@@ -179,20 +179,11 @@ local function OnClick(self, btn)
 	end
 end
 
-DT:RegisterDatatext(
-	"Gold",
-	{
-		"PLAYER_ENTERING_WORLD",
-		"PLAYER_MONEY",
-		"SEND_MAIL_MONEY_CHANGED",
-		"SEND_MAIL_COD_CHANGED",
-		"PLAYER_TRADE_MONEY",
-		"TRADE_MONEY_CHANGED",
-	},
-	OnEvent,
-	nil,
-	OnClick,
-	OnEnter,
-	nil,
-	L["Gold"]
-)
+DT:RegisterDatatext("Gold", {
+	"PLAYER_ENTERING_WORLD",
+	"PLAYER_MONEY",
+	"SEND_MAIL_MONEY_CHANGED",
+	"SEND_MAIL_COD_CHANGED",
+	"PLAYER_TRADE_MONEY",
+	"TRADE_MONEY_CHANGED",
+}, OnEvent, nil, OnClick, OnEnter, nil, L["Gold"])

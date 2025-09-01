@@ -529,10 +529,13 @@ function CH:GetLines(frame)
 end
 
 function CH:CopyChat(frame)
+	if not self.copyChatFrame then
+		self:BuildCopyChatFrame()
+	end
+
 	if not self.copyChatFrame:IsShown() then
 		local lineCount = self:GetLines(frame)
 		local text = tconcat(copyLines, "\n", 1, lineCount)
-
 		self.copyChatFrame.editBox:SetText(text)
 		self.copyChatFrame:Show()
 	else
@@ -2076,6 +2079,9 @@ function CH:DefaultSmileys()
 end
 
 function CH:BuildCopyChatFrame()
+	if self.copyChatFrame then
+		return
+	end
 	local frame = CreateFrame("Frame", "CopyChatFrame", E.UIParent)
 	frame:Hide()
 	frame:SetTemplate("Transparent")

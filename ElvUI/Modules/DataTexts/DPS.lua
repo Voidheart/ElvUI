@@ -97,19 +97,10 @@ local function ValueColorUpdate(hex)
 end
 E.valueColorUpdateFuncs[ValueColorUpdate] = true
 
-DT:RegisterDatatext(
-	"DPS",
-	{
-		"PLAYER_ENTERING_WORLD",
-		"COMBAT_LOG_EVENT_UNFILTERED",
-		"PLAYER_LEAVE_COMBAT",
-		"PLAYER_REGEN_DISABLED",
-		"UNIT_PET",
-	},
-	OnEvent,
-	nil,
-	OnClick,
-	nil,
-	nil,
-	L["DPS"]
-)
+DT:RegisterDatatext("DPS", {
+	"PLAYER_ENTERING_WORLD",
+	"COMBAT_LOG_EVENT_UNFILTERED",
+	"PLAYER_LEAVE_COMBAT",
+	"PLAYER_REGEN_DISABLED",
+	"UNIT_PET",
+}, OnEvent, nil, OnClick, nil, nil, L["DPS"])
